@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nathan Pham - Civil Engineer (EIT) / Design Automation</title>
+<style>
+  :root {
+    --navy: #14263f; --blue: #1f4a7a; --blue-light: #4f7cad; --gray: #5b6572;
+    --bg: #f6f7f9; --panel: #ffffff; --border: #e3e7ec; --accent: #c96a3a;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: #1c2128;
+    font-family: "Segoe UI", Calibri, Arial, sans-serif; }
+  .wrap { max-width: 960px; margin: 0 auto; padding: 48px 24px 80px; }
+
+  .hero {
+    display: flex; gap: 32px; align-items: center; background: linear-gradient(135deg, var(--navy), var(--blue));
+    border-radius: 16px; padding: 36px 40px; color: #fff; margin-bottom: 36px;
+    box-shadow: 0 8px 24px rgba(20,38,63,0.25);
+  }
+  .hero img {
+    width: 132px; height: 132px; border-radius: 50%; object-fit: cover;
+    border: 4px solid rgba(255,255,255,0.85); box-shadow: 0 4px 14px rgba(0,0,0,0.25); flex-shrink: 0;
+  }
+  .hero h1 { margin: 0 0 4px; font-size: 26px; }
+  .hero .role { font-size: 15px; font-weight: 600; opacity: 0.92; margin-bottom: 10px; }
+  .hero p { margin: 0; font-size: 14px; line-height: 1.55; opacity: 0.95; max-width: 560px; }
+  .hero .links { margin-top: 14px; font-size: 13px; }
+  .hero .links a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.5); margin-right: 14px; }
+  .hero .links a:hover { border-bottom-color: #fff; }
+
+  h2 {
+    font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px;
+    color: var(--navy); margin: 38px 0 16px; display: flex; align-items: center; gap: 10px;
+  }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 18px 18px 16px;
+    box-shadow: 0 1px 3px rgba(20,38,63,0.05);
+  }
+  .card .icon {
+    width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 10px;
+  }
+  .card h3 { margin: 0 0 6px; font-size: 14.5px; color: var(--navy); }
+  .card p { margin: 0; font-size: 12.8px; color: var(--gray); line-height: 1.5; }
+
+  .c1 .icon { background: var(--blue); }
+  .c2 .icon { background: var(--accent); }
+  .c3 .icon { background: #2d8659; }
+  .c4 .icon { background: #7a4fb0; }
+  .c5 .icon { background: #b0554f; }
+
+  .tool {
+    background: var(--panel); border: 1px solid var(--border); border-left: 4px solid var(--blue);
+    border-radius: 10px; padding: 16px 18px; margin-bottom: 12px;
+  }
+  .tool h3 { margin: 0 0 5px; font-size: 14.5px; color: var(--navy); }
+  .tool p { margin: 0; font-size: 13px; color: #333a42; line-height: 1.55; }
+  .tool .tag {
+    display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+    color: var(--blue); background: #eaf1f9; padding: 2px 8px; border-radius: 20px; margin-bottom: 8px;
+  }
+
+  .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 14px; margin-bottom: 8px; }
+  .metric { background: var(--panel); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: center; }
+  .metric .num { font-size: 22px; font-weight: 800; color: var(--blue); }
+  .metric .label { font-size: 11px; color: var(--gray); margin-top: 4px; letter-spacing: 0.3px; }
+
+  footer { text-align: center; color: var(--gray); font-size: 12px; margin-top: 50px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <img src="assets/headshot.jpg" alt="Nathan Pham">
+    <div>
+      <h1>Nathan Pham, EIT</h1>
+      <div class="role">Civil Engineer &middot; Design Automation &middot; Codes &amp; Permitting</div>
+      <p>Civil EIT who pairs real infrastructure engineering with the automation tools that scale it.
+      Three years across major transit, high-speed rail, and federal programs, plus independent
+      structural and code work under IRC/CBC/NDS. I build the tool instead of repeating the calculation.</p>
+      <div class="links">
+        <a href="mailto:nathanpham0120x@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/nhut-pham-9ba108186/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+
+  <h2>At a Glance</h2>
+  <div class="metrics">
+    <div class="metric"><div class="num">~30,000</div><div class="label">Lines of production VBA automation</div></div>
+    <div class="metric"><div class="num">99.2%</div><div class="label">Hydrology / catchment model accuracy</div></div>
+    <div class="metric"><div class="num">3</div><div class="label">Multi-jurisdiction permit approvals</div></div>
+    <div class="metric"><div class="num">60-80%</div><div class="label">Plan-set revision time cut</div></div>
+  </div>
+
+  <h2>Skill Areas</h2>
+  <div class="grid">
+    <div class="card c1">
+      <div class="icon">CV</div>
+      <h3>Civil &amp; Hydraulic Design</h3>
+      <p>Utility design, storm-drainage and hydraulic analysis, catchment delineation, grading and
+      earthwork across transit, rail, and federal programs.</p>
+    </div>
+    <div class="card c2">
+      <div class="icon">CD</div>
+      <h3>Codes &amp; Permitting</h3>
+      <p>IRC, CBC (incl. 706 fire walls), NDS-2018, ASCE 7-22, zoning and entitlements, plan-check and
+      agency coordination.</p>
+    </div>
+    <div class="card c3">
+      <div class="icon">SW</div>
+      <h3>Design Software</h3>
+      <p>OpenRoads Designer, Civil 3D, MicroStation, Revit, AutoCAD.</p>
+    </div>
+    <div class="card c4">
+      <div class="icon">AU</div>
+      <h3>Automation</h3>
+      <p>Excel VBA/MVBA, Python, AutoLISP, Dynamo &mdash; turning repetitive design and QA work into
+      production tools.</p>
+    </div>
+    <div class="card c5">
+      <div class="icon">ST</div>
+      <h3>Structural &amp; Wood-Frame</h3>
+      <p>IRC-prescriptive member design, EOR-coordinated calc packages, fire-wall code strategy for
+      multi-unit residential.</p>
+    </div>
+  </div>
+
+  <h2>Signature Tools Built</h2>
+
+  <div class="tool">
+    <span class="tag">VBA</span>
+    <h3>Standards &rarr; Design-Properties Engine</h3>
+    <p>Classifies pipe bends against AWWA C110/C153 fitting standards, auto-subdivides non-compliant
+    geometry into constructible fittings, and flags exceptions for engineer review.</p>
+  </div>
+
+  <div class="tool">
+    <span class="tag">Python / FastAPI</span>
+    <h3>Building-Code &amp; Permit Platform</h3>
+    <p>Codifies a zoning/setback/height/FAR standards table across 19+ jurisdictions, each value
+    provenance-stamped to its source code; auto-fills municipal permit forms, turning manual entitlement
+    work into permit-grade output.</p>
+  </div>
+
+  <div class="tool">
+    <span class="tag">VBA / MVBA</span>
+    <h3>OpenRoads Utility-Design Suite</h3>
+    <p>End-to-end subsurface-utility automation &mdash; node placement, connectivity, profile/cross-section
+    generation, and cover-depth reporting &mdash; deployed across four major infrastructure programs.</p>
+  </div>
+
+  <div class="tool">
+    <span class="tag">Python</span>
+    <h3>Catchment-Delineation &amp; Hydrology Engine</h3>
+    <p>Converts terrain data into a conditioned DEM (gutter/inlet burning, D8 flow routing), delineates
+    catchments calibrated to 99.2% agreement, and round-trips results back into the design model.</p>
+  </div>
+
+  <div class="tool">
+    <span class="tag">Dynamo / Python</span>
+    <h3>Keynote Suite</h3>
+    <p>Bi-directional construction-note sync between CAD and Excel, cutting plan-set revision time
+    60-80%.</p>
+  </div>
+
+  <footer>Nathan Pham &middot; Civil Engineer (EIT) &middot; nathanpham0120x@gmail.com</footer>
+</div>
+</body>
+</html>
