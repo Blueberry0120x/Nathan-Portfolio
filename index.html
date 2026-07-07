@@ -296,10 +296,30 @@ footer{
 }
 
 /* ============================================================================
+   PERMITTING & LAND-DEVELOPMENT SHOWCASE (deep-linkable project detail)
+   ========================================================================== */
+.pgrp{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+      color:var(--ink-soft);margin:22px 0 12px;padding-bottom:5px;border-bottom:1px solid var(--line);}
+.pgrp:first-of-type{margin-top:4px;}
+.pset{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;}
+.pc{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:20px 22px;
+    scroll-margin-top:24px;}
+.pc:target{border-color:var(--dot,var(--accent));box-shadow:0 0 0 2px var(--accent-wash);}
+.pc h3{font-size:19px;font-weight:730;letter-spacing:-.01em;margin:9px 0 3px;}
+.pc .loc{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:4px;}
+.pc ul{margin:12px 0 0;padding-left:0;list-style:none;}
+.pc li{position:relative;padding-left:18px;margin-bottom:8px;font-size:13.5px;color:var(--ink-soft);line-height:1.5;}
+.pc li::before{content:"";position:absolute;left:2px;top:8px;width:6px;height:6px;border-radius:50%;border:1.5px solid var(--dot);}
+.pc li b{color:var(--ink);}
+.pc .prole{margin-top:13px;padding-top:10px;border-top:1px dashed var(--line);
+           font-size:12px;color:var(--accent-deep);font-weight:600;}
+
+/* ============================================================================
    RESPONSIVE + MOTION
    ========================================================================== */
 @media (max-width:760px){
   .grid{grid-template-columns:1fr;}
+  .pset{grid-template-columns:1fr;}
   .cols2{grid-template-columns:1fr;gap:24px;}
   .stats-inner{grid-template-columns:1fr 1fr;}
   .herorow{flex-direction:column-reverse;align-items:flex-start;gap:22px;}
@@ -394,6 +414,91 @@ footer{
       <button class="filt" data-f="auto" aria-pressed="false">Design automation</button>
     </div>
     <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     PERMITTING & LAND-DEVELOPMENT SHOWCASE  (deep-linkable; matches the PDF)
+     ======================================================================= -->
+<section id="permitting" class="section--tight-top">
+  <div class="wrap">
+    <p class="kicker">Permitting &amp; land development &middot; project detail</p>
+    <h2>Permit projects</h2>
+    <p class="lead">Independent San Diego residential design and permitting, plus modeling, drafting, and production support under the Engineer of Record on Washington short plats and critical-area corrections. Owner and address details withheld for privacy.</p>
+
+    <p class="pgrp">Independent design &amp; permitting &mdash; my own San Diego residential projects</p>
+    <div class="pset">
+      <article id="perm-redwood" class="pc" style="--dot:var(--civil)">
+        <span class="cat"><span class="dot"></span>Detached ADU</span>
+        <h3>Redwood Street ADU</h3>
+        <div class="loc">San Diego, CA &middot; City of San Diego DSD</div>
+        <ul>
+          <li>New <b>600 SF detached ADU</b> on an RS-1-7 single-family lot; site plan, setbacks, and <b>FAR compliance</b> (0.38 vs 0.59 max).</li>
+          <li><b>Stormwater BMP</b> plan and earthwork / impervious-area analysis.</li>
+          <li>Fire-separation-distance analysis (CRC R302.1) and plumbing-fixture schedule; carried through a <b>cycle-1 plan-check</b> to approval.</li>
+        </ul>
+        <div class="prole">My role: full civil / site design + permitting. Structural and Title 24 by others.</div>
+      </article>
+      <article id="perm-elcajon" class="pc" style="--dot:var(--civil)">
+        <span class="cat"><span class="dot"></span>Adaptive Reuse &middot; 2-Unit</span>
+        <h3>El Cajon Blvd Reuse</h3>
+        <div class="loc">San Diego, CA &middot; North Park (CC-3-9)</div>
+        <ul>
+          <li>Converted an existing commercial shell into a <b>2-unit, 2-story townhouse</b> (~1,600 SF/unit) behind a retained Group B storefront.</li>
+          <li><b>CBC 706 center fire wall</b> splitting the units &mdash; R-3 occupancy strategy to avoid commercial sprinklers.</li>
+          <li>Existing-structure retention, new floor deck, and CBC 1030 egress; San Diego DS-375 / DS-4107 permit forms and site plan.</li>
+        </ul>
+        <div class="prole">My role: fire-wall code strategy, civil / site, and entitlement / permitting.</div>
+      </article>
+      <article id="perm-euclid" class="pc" style="--dot:var(--civil)">
+        <span class="cat"><span class="dot"></span>Mixed-Use &middot; 9-Unit + Commercial</span>
+        <h3>Euclid Avenue Mixed-Use</h3>
+        <div class="loc">San Diego, CA &middot; City Heights (CUPD-CU-2-4)</div>
+        <ul>
+          <li><b>9 residential units + 640 SF commercial</b> on a 6,250 SF lot, organized into <b>5 fire-wall-separated blocks</b>.</li>
+          <li><b>CBC 706 2-hour fire-wall strategy</b>: each block classified as a separate R-3 building &mdash; eliminates the shared corridor and the NFPA 13R commercial sprinkler requirement (NFPA 13D only).</li>
+          <li>Full CBC 706.4&ndash;706.11 code path (independence, continuity, parapets, penetrations) + area-separation-wall assembly; San Diego permit set (DS-375 / DS-3032 / DS-420 / DS-4107, site plan, survey / topo).</li>
+        </ul>
+        <div class="prole">My role: fire-wall code strategy, occupancy classification, civil / site, and entitlement / permitting. Structural by others.</div>
+      </article>
+    </div>
+
+    <p class="pgrp">Production support &mdash; modeling, drafting &amp; production under the Engineer of Record</p>
+    <div class="pset">
+      <article id="perm-rainier" class="pc" style="--dot:var(--auto)">
+        <span class="cat"><span class="dot"></span>Steep-Slope / ECA &middot; Correction</span>
+        <h3>Rainier Avenue ECA Correction</h3>
+        <div class="loc">Seattle, WA &middot; SDCI Environmentally Critical Area</div>
+        <ul>
+          <li>Permit-and-inspection correction on a <b>steep-slope (&gt;40%) ECA</b> parcel with associated buffer.</li>
+          <li><b>Permanent retaining-wall</b> design for slope stabilization, impervious-surface reduction, and a <b>revegetation plan</b>.</li>
+          <li>Existing-vs-proposed site documentation, grading / ESC; coordinated the geotechnical engineer of record.</li>
+        </ul>
+        <div class="prole">My role: modeling, drafting, and production support under the Engineer of Record.</div>
+      </article>
+      <article id="perm-astreet" class="pc" style="--dot:var(--auto)">
+        <span class="cat"><span class="dot"></span>Residential Short Plat &middot; 5-Unit</span>
+        <h3>A Street Short Plat</h3>
+        <div class="loc">Tacoma, WA &middot; Pierce County</div>
+        <ul>
+          <li><b>Five-unit residential short plat</b> on ~0.45 ac (19,631 SF), R-4L &mdash; site regrade with five SFR footprints.</li>
+          <li><b>Road &amp; drainage</b> design, erosion / sediment control, and utility (water / sewer / storm) plan.</li>
+          <li>Mass-grading earthwork (~1,000 CY) and traffic-control coordination per WSDOT / City of Tacoma standards.</li>
+        </ul>
+        <div class="prole">My role: modeling, drafting, and production support under the Engineer of Record.</div>
+      </article>
+      <article id="perm-143rd" class="pc" style="--dot:var(--auto)">
+        <span class="cat"><span class="dot"></span>Residential Short Plat &middot; 2-Unit</span>
+        <h3>143rd Place Short Plat</h3>
+        <div class="loc">Lynnwood, WA &middot; Snohomish County</div>
+        <ul>
+          <li><b>Two-unit short plat</b> on 17,355 SF (R-7200), net density 5.03 du/ac.</li>
+          <li>Grading &amp; <b>SWPPP</b>, road &amp; drainage plan and profiles, and sewer &amp; water plan.</li>
+          <li>Net-density compliance, post-office approval plan, and approved landscape / tree plan.</li>
+        </ul>
+        <div class="prole">My role: modeling, drafting, and production support under the Engineer of Record.</div>
+      </article>
+    </div>
   </div>
 </section>
 
