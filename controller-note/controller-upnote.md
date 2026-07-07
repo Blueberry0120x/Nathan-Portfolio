@@ -1,3 +1,41 @@
+## [2026-07-07T04:19:14Z] Removed M.S./AI degree from education -- CONTROLLER-MADE @claude-cli
+
+- **What changed:** deleted the "M.S., Artificial Intelligence -- University of the Cumberlands --
+  enrolled Fall 2026" education card from `index.html`. Per Designer directive to strip every mention of
+  the AI master's / "enrolled" from ALL resume + HTML artifacts. Education now shows B.S. + EIT only.
+- **Scope note:** this same directive was applied fleet-wide in the Controller repo the same turn --
+  `NP_ClaudeAgent/resume/*` (cv.md/.html/.pdf, master.md, portfolio.html, editor JSON + SEED_JSON,
+  landdev variant, keynote_suite_au.html, the Weyerhaeuser docx+pdf) and the OneDrive Desktop submission
+  copies were all scrubbed and verified clean.
+- **Origin:** Controller-made (NP_ClaudeAgent session). If you pick this repo up, the removal was not yours.
+
+---
+
+## [2026-07-07T04:05:40Z] index.html structural refactor + spacing tokens -- CONTROLLER-MADE @claude-cli
+
+- **What changed:** `index.html` rebuilt for maintainability -- NO visual/content change. (1) Added a
+  real HTML5 skeleton (`<!DOCTYPE html>` / `<html lang>` / `<head>` / `<body>`); the file was a raw
+  fragment before. (2) Introduced a design-token system in `:root` -- spacing scale (`--space-xs`..
+  `--space-3xl`) plus layout dials (`--maxw`, `--gutter`, `--section-y`, `--radius`, `--lead-width`) so
+  padding/rhythm tune from one place. (3) Replaced all inline `style="..."` overrides (per-section
+  padding, h2 font size) with modifier classes (`.section--flush-top`, `.section--tight-top`, `.h2--sub`).
+  (4) De-minified the CSS into commented, labeled blocks; hero is now `<header>` (stats kept a `<div>` so
+  it doesn't inherit section padding). Committed `cd35d9b`, pushed to `main`.
+- **Then (still LOCAL, uncommitted at time of this note):** Designer asked to widen the About lead
+  paragraph -- added a `--lead-width` token and set it to `1012px` (was `68ch`). Two small working-tree
+  edits pending the Designer's go to push.
+- **Why:** Designer asked to make the HTML "structural clean and neat, allow easy control of styles/
+  padding as a web developer." The token system + inline-style removal is the direct answer -- all
+  padding/width now controllable from the `:root` block at the top of `<style>`.
+- **Verification done:** rendered the file before/after to full-page PNG via Playwright (light mode,
+  1200px) -- pixel-for-pixel identical layout; base64 headshot byte-identical (70,472 chars); all
+  skeleton tags present + balanced; theme toggle / filter / card-expand JS unchanged.
+- **Origin:** Controller-made (NP_ClaudeAgent session), not an agent working directly in this repo --
+  git author is the shared identity, so if you pick this repo up, this refactor + the pending
+  `--lead-width` tweak were not yours. This note is the record.
+
+---
+
 ## [2026-07-06T23:42:06Z] Design replacement + GitHub Pages enabled -- CONTROLLER-MADE @claude-cli
 
 - **What changed:** `index.html` replaced end to end -- the prior showcase design (navy gradient hero,

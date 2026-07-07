@@ -41,6 +41,7 @@
   --gutter:22px;           /* page left/right padding       */
   --section-y:56px;        /* default section top/bottom pad */
   --radius:12px;           /* default card corner radius     */
+  --lead-width:1012px;     /* intro/lead paragraph max width */
 }
 
 /* --- Color: dark, auto via OS preference -------------------------------- */
@@ -182,7 +183,7 @@ h2{
   letter-spacing:-.015em;margin:0 0 10px;
 }
 .h2--sub{font-size:24px;margin-bottom:20px;}   /* smaller column heading (Skills / Education) */
-.lead{font-size:16px;color:var(--ink-soft);max-width:68ch;line-height:1.65;margin:0 0 30px;}
+.lead{font-size:16px;color:var(--ink-soft);max-width:var(--lead-width);line-height:1.65;margin:0 0 30px;}
 .lead b{color:var(--ink);}
 
 /* ============================================================================
@@ -415,7 +416,6 @@ footer{
         <h2 class="h2--sub">Education &amp; credentials</h2>
         <div class="edu"><div class="d">B.S., Civil Engineering</div><div class="s">Minnesota State University, Mankato</div><div class="y">May 2023</div></div>
         <div class="edu"><div class="d">Engineer-in-Training (EIT)</div><div class="s">Working toward Professional Engineer (PE) licensure</div></div>
-        <div class="edu"><div class="d">M.S., Artificial Intelligence</div><div class="s">University of the Cumberlands</div><div class="y">enrolled &middot; Fall 2026</div></div>
       </div>
     </div>
   </div>
