@@ -1,3 +1,19 @@
+## [2026-07-07T13:09:16Z] Added deep-linkable Permit projects section -- CONTROLLER-MADE @claude-cli
+
+- **What changed:** new `#permitting` section in `index.html` ("Permit projects") between the Projects
+  and Skills sections, with 6 anchor-addressable cards (`#perm-redwood/elcajon/euclid/rainier/astreet/143rd`)
+  split into "Independent design & permitting" (San Diego own work) and "Production support under the EOR"
+  (WA short plats). Added `.pgrp/.pset/.pc` CSS + `:target` highlight + a mobile `.pset` rule. Commit `10dbd60`.
+- **Why:** the Controller-built permit showcase PDF (`NP_ClaudeAgent/resume/NPham_Portfolio-Showcase.pdf`)
+  now deep-links here -- a "View Full Portfolio" button -> `#permitting`, and each PDF project title ->
+  its `#perm-<slug>` card. This section is the landing detail for those links.
+- **Safety:** PII-free (owner/address withheld); no ADEC/Passio; roles honest (own work vs EOR support).
+  PII scan on the built page returns NONE.
+- **Origin:** Controller-made (NP_ClaudeAgent session), not an agent in this repo. If you pick this up,
+  the section + the M.S./AI removal below were not yours.
+
+---
+
 ## [2026-07-07T04:19:14Z] Removed M.S./AI degree from education -- CONTROLLER-MADE @claude-cli
 
 - **What changed:** deleted the "M.S., Artificial Intelligence -- University of the Cumberlands --
