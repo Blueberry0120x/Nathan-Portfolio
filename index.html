@@ -251,6 +251,10 @@ h2{
 .detail-inner li b{color:var(--ink);}
 .stack{margin-top:14px;font-family:var(--mono);font-size:11px;color:var(--muted);line-height:1.5;}
 .stack::before{content:"tools  ";color:var(--dot);}
+.demolink{display:inline-flex;align-items:center;gap:6px;margin-top:14px;
+  font-family:var(--mono);font-size:12px;font-weight:600;color:var(--dot);text-decoration:none;
+  border:1px solid var(--line);border-radius:6px;padding:6px 12px;transition:all .15s;}
+.demolink:hover{border-color:var(--dot);background:var(--card);}
 
 /* ============================================================================
    EXPERIENCE
@@ -567,12 +571,12 @@ const PROJECTS=[
  {cat:"auto",dot:"var(--auto)",name:"Keynote Suite (Dynamo)",one:"Keynotes and schedule tables that stay in sync.",
   tags:["Dynamo","Civil 3D","Revit"],
   det:["A set of Dynamo graphs that handle keynote callouts and their schedule tables in Civil 3D and Revit.","Keeps the callouts and the table consistent when either one changes.","Cut keynote and revision time roughly <b>60&ndash;80%</b> on the sheets I ran it on."],
-  stack:"Dynamo &middot; Civil 3D &middot; Revit"},
+  stack:"Dynamo &middot; Civil 3D &middot; Revit", demo:"showcase/keynote.html"},
 
  {cat:"auto",dot:"var(--auto)",name:"AutoLISP command library",one:"Standard drafting steps, wrapped for consistency.",
   tags:["AutoLISP","AutoCAD"],
   det:["A library of AutoLISP commands for the standard drafting operations.","Wrapped so the output comes out the same every time.","Steward of the catalog and its migration between releases."],
-  stack:"AutoLISP &middot; AutoCAD"}
+  stack:"AutoLISP &middot; AutoCAD", demo:"showcase/lsp.html"}
 ];
 
 const grid=document.getElementById("grid");
@@ -590,6 +594,7 @@ grid.innerHTML=PROJECTS.map((p,i)=>`
      <div class="detail"><div class="detail-inner">
        <ul>${p.det.map(d=>`<li>${d}</li>`).join("")}</ul>
        <div class="stack">${p.stack}</div>
+       ${p.demo?`<a class="demolink" href="${p.demo}" target="_blank" rel="noopener">View live demo &rarr;</a>`:""}
      </div></div>
    </div>
  </article>`).join("");

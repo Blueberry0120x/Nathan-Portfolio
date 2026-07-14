@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LSP Command Library &mdash; Design-Automation Showcase</title>
+<style>
+  :root {
+    --paper: #f4f6f5;
+    --card: #ffffff;
+    --ink: #16202b;
+    --ink-soft: #3a4653;
+    --muted: #6a7581;
+    --line: #dde2e0;
+    --accent: #1e6f9c;         /* Civil 3D / water blue */
+    --accent-deep: #12506f;
+    --accent-wash: #e6f0f5;
+    --amber: #c07a1e;          /* command-tag amber */
+    --amber-wash: #f6ecdb;
+    --good: #2f7d4f;
+    --mono: ui-monospace, "SF Mono", "Cascadia Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0d1219; --card: #141c25; --ink: #e9eef2; --ink-soft: #b6c0cb;
+      --muted: #8994a1; --line: #24303b; --accent: #49a2ce; --accent-deep: #79bfe3;
+      --accent-wash: #16303d; --amber: #d4972f; --amber-wash: #2e2413; --good: #5cb27f;
+    }
+  }
+  :root[data-theme="light"] {
+    --paper: #f4f6f5; --card: #ffffff; --ink: #16202b; --ink-soft: #3a4653;
+    --muted: #6a7581; --line: #dde2e0; --accent: #1e6f9c; --accent-deep: #12506f;
+    --accent-wash: #e6f0f5; --amber: #c07a1e; --amber-wash: #f6ecdb; --good: #2f7d4f;
+  }
+  :root[data-theme="dark"] {
+    --paper: #0d1219; --card: #141c25; --ink: #e9eef2; --ink-soft: #b6c0cb;
+    --muted: #8994a1; --line: #24303b; --accent: #49a2ce; --accent-deep: #79bfe3;
+    --accent-wash: #16303d; --amber: #d4972f; --amber-wash: #2e2413; --good: #5cb27f;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--sans); line-height: 1.55; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+  /* Hero */
+  .hero {
+    padding: 60px 0 40px;
+    border-bottom: 1px solid var(--line);
+    background:
+      radial-gradient(120% 90% at 100% 0%, var(--accent-wash), transparent 55%);
+  }
+  .eyebrow {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 14px;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  .status-pill {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.06em;
+    text-transform: uppercase; padding: 2px 8px; border-radius: 999px;
+    border: 1px solid var(--good); color: var(--good); background: transparent;
+  }
+  h1.title {
+    font-size: clamp(32px, 5.4vw, 52px); font-weight: 800; letter-spacing: -0.025em;
+    line-height: 1.03; margin: 0; text-wrap: balance;
+  }
+  h1.title .accent { color: var(--accent); }
+  .subtitle {
+    margin: 18px 0 0; font-size: 18px; line-height: 1.5; color: var(--ink-soft);
+    max-width: 62ch; text-wrap: pretty;
+  }
+  .subtitle b { color: var(--ink); }
+  .meta {
+    margin-top: 24px; display: flex; flex-wrap: wrap; gap: 8px 10px;
+  }
+  .chip {
+    font-family: var(--mono); font-size: 12px; padding: 4px 10px;
+    border: 1px solid var(--line); border-radius: 4px; color: var(--ink-soft);
+    background: var(--card);
+  }
+  .chip b { color: var(--accent-deep); font-weight: 600; }
+
+  /* Arc: zero to hero */
+  section { padding: 44px 0; border-bottom: 1px solid var(--line); }
+  .kicker {
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 8px;
+  }
+  h2 {
+    font-size: 26px; font-weight: 750; letter-spacing: -0.015em; margin: 0 0 16px;
+    text-wrap: balance;
+  }
+  p.body { font-size: 15.5px; line-height: 1.66; color: var(--ink-soft); margin: 0 0 14px; max-width: 68ch; }
+  p.body b { color: var(--ink); }
+
+  .arc { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+  .arc .stage {
+    border: 1px solid var(--line); border-radius: 6px; padding: 20px 20px 22px;
+    background: var(--card); position: relative;
+  }
+  .arc .stage .n {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .arc .stage.zero { border-left: 3px solid var(--muted); }
+  .arc .stage.hero { border-left: 3px solid var(--accent); }
+  .arc .stage h3 { margin: 6px 0 8px; font-size: 17px; }
+  .arc .stage p { margin: 0; font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; }
+  .arrow {
+    grid-column: 1 / -1; text-align: center; color: var(--accent);
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; margin: 2px 0;
+  }
+
+  /* Metrics */
+  .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 6px; }
+  .metric { border: 1px solid var(--line); border-radius: 6px; padding: 18px; background: var(--card); }
+  .metric .n {
+    font-family: var(--mono); font-size: 30px; font-weight: 700; color: var(--accent);
+    line-height: 1; font-variant-numeric: tabular-nums;
+  }
+  .metric .l { font-size: 12.5px; color: var(--muted); margin-top: 7px; line-height: 1.35; }
+
+  /* Pipeline timeline */
+  .versions { display: flex; flex-direction: column; gap: 0; margin-top: 4px; }
+  .ver { display: grid; grid-template-columns: 96px 1fr; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); }
+  .ver:first-child { border-top: none; }
+  .ver .tag {
+    font-family: var(--mono); font-size: 13px; font-weight: 700; color: var(--accent-deep);
+    padding-top: 1px;
+  }
+  .ver .txt { font-size: 14px; color: var(--ink-soft); line-height: 1.5; }
+  .ver .txt b { color: var(--ink); }
+
+  /* Speaker / author */
+  .speaker { display: grid; grid-template-columns: 1fr; gap: 8px; }
+  .speaker .name { font-size: 18px; font-weight: 700; }
+  .speaker .tagline { font-size: 13.5px; color: var(--accent-deep); font-weight: 600; }
+
+  footer {
+    padding: 26px 0 44px; font-family: var(--mono); font-size: 12px; color: var(--muted);
+    line-height: 1.6;
+  }
+  footer b { color: var(--ink-soft); }
+  .note {
+    border-left: 3px solid var(--amber); background: var(--amber-wash);
+    padding: 12px 16px; border-radius: 0 6px 6px 0; margin-top: 14px;
+    font-family: var(--sans); font-size: 13px; color: var(--ink-soft); line-height: 1.55;
+  }
+
+  @media (max-width: 640px) {
+    .arc { grid-template-columns: 1fr; }
+    .metrics { grid-template-columns: 1fr; }
+    .ver { grid-template-columns: 78px 1fr; gap: 12px; }
+  }
+  @media print {
+    body { background: #fff; }
+    section, .hero { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Design Automation &mdash; Tooling Showcase <span class="status-pill">Production tool &middot; portfolio exhibit</span></p>
+    <h1 class="title">LSP Command Library: turning a sprawling AutoLISP library into a <span class="accent">searchable</span> command universe</h1>
+    <p class="subtitle">A folder of loose <b>AutoCAD LISP routines</b> nobody could navigate, harvested into a self-updating catalog &mdash; a searchable 2D list and an interactive 3D command map, both generated from <b>one source of truth</b> so they can never drift.</p>
+    <div class="meta">
+      <span class="chip"><b>Discipline</b> &nbsp;AEC / CAD Standards</span>
+      <span class="chip"><b>Role</b> &nbsp;Library steward &amp; tooling</span>
+      <span class="chip"><b>Stack</b> &nbsp;AutoCAD LISP + Python</span>
+      <span class="chip"><b>Output</b> &nbsp;JSON + two linked viewers</span>
+    </div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">The arc</p>
+    <h2>From a folder nobody could navigate to a live catalog</h2>
+    <p class="body">A CAD team accumulates LISP the way a garage accumulates tools &mdash; powerful, but scattered, undocumented, and impossible to search. The best routines get buried; the same command gets re-written because no one knew it existed. The fix was not more code &mdash; it was <b>making the library legible</b>.</p>
+    <div class="arc">
+      <div class="stage zero">
+        <div class="n">Zero &middot; the scattered state</div>
+        <h3>Routines with no map</h3>
+        <p>Dozens of <span style="font-family:var(--mono)">.lsp</span> files across an evolving master library. No search, no categories, uneven headers, no way to see what exists or how commands relate. Discovery by tribal knowledge.</p>
+      </div>
+      <div class="stage hero">
+        <div class="n">Hero &middot; the catalog</div>
+        <h3>One JSON, two synchronized viewers</h3>
+        <p>A pipeline parses every <span style="font-family:var(--mono)">(defun c:&hellip;)</span> block into a structured catalog, then generates a searchable list <em>and</em> a 3D command map from the same data &mdash; so the two views can never disagree.</p>
+      </div>
+      <div class="arrow">sync &rarr; inspect &rarr; stage &rarr; build &nbsp;&mdash;&nbsp; a repeatable harvest, not a one-off cleanup</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">Why it matters</p>
+    <h2>A library you can actually use</h2>
+    <div class="metrics">
+      <div class="metric"><div class="n">90</div><div class="l">catalog records &mdash; 71 commands + 19 auto-grouped suite menus</div></div>
+      <div class="metric"><div class="n">9</div><div class="l">categories, grouped automatically from file structure</div></div>
+      <div class="metric"><div class="n">2&rarr;1</div><div class="l">two viewers generated from one JSON &mdash; they cannot drift</div></div>
+    </div>
+    <div class="note">Beyond discoverability, a <b>10-dimension code-standards scorecard</b> grades 43 files and a cross-command relationship analyzer maps how the routines interrelate &mdash; turning "a pile of scripts" into a maintainable, audited catalog.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">The build, honestly</p>
+    <h2>A four-stage harvester, not a hand-made list</h2>
+    <p class="body">The catalog is generated, never hand-edited &mdash; so it stays true to the source every time it runs. Four stages, each guarding against a different way a hand-maintained index goes stale.</p>
+    <div class="versions">
+      <div class="ver"><div class="tag">Sync</div><div class="txt"><b>Mirror the source, read-only.</b> One-way copy of the LISP master library into a working mirror &mdash; the source is never touched or risked.</div></div>
+      <div class="ver"><div class="tag">Inspect</div><div class="txt"><b>Drift report.</b> Diff source against the mirror so the catalog can never silently fall behind the real library.</div></div>
+      <div class="ver"><div class="tag">Stage</div><div class="txt"><b>Filter to canonical.</b> Keep the library files that belong in the catalog and drop scratch and legacy noise.</div></div>
+      <div class="ver"><div class="tag">Build</div><div class="txt"><b>Parse &rarr; JSON &rarr; viewers.</b> Read every <span style="font-family:var(--mono)">(defun c:&hellip;)</span> into <span style="font-family:var(--mono)">CommandLibrary.json</span>, then render both viewers and the standards scorecard from it.</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">The payoff</p>
+    <h2>Two ways into the same library</h2>
+    <div class="arc">
+      <div class="stage hero">
+        <div class="n">2D &middot; searchable list</div>
+        <h3>Find it by name or by intent</h3>
+        <p>Full-text search, category and suite navigation, per-command source, and a <b>"What do you want to do?"</b> task map that goes from intent straight to the right command. Each entry cross-links into the 3D view.</p>
+      </div>
+      <div class="stage hero">
+        <div class="n">3D &middot; command universe</div>
+        <h3>See how the library is shaped</h3>
+        <p>A node-graph star map &mdash; core to category hubs to suite stars to command satellites &mdash; on a fully offline force-graph. Click a star for details and a deep link back into the list.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="kicker">Author</p>
+    <h2>Who built this</h2>
+    <div class="speaker">
+      <div class="name">Nathan Pham</div>
+      <div class="tagline">Utility Designer / Modeler, Stantec &middot; automation &amp; AI systems builder</div>
+      <p class="body" style="margin-top:6px;">Civil / infrastructure designer on major transit work (Austin Transit Partnership Light Rail) who builds the automation he wishes existed: an ORD/VBA utility-design engine with an AWWA C110/C153 bend classifier, the Keynote Suite for Civil 3D, and this LSP command-library pipeline. The value here is <b>stewardship</b> &mdash; not authoring every routine, but making an unwieldy shared library discoverable, audited, and maintainable.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>Status &amp; provenance.</b> Internal production tooling for an AutoCAD/Civil 3D LISP library. This page is a capability exhibit &mdash; a portfolio link and supporting proof for applications. Catalog figures reflect the current build (71 commands + 19 suite menus across 9 categories).<br>
+    <b>Scope.</b> Describes Nathan Pham's own harvesting-and-cataloging tooling and workflow at capability level. No employer source code or client data is published; command structure is shown, not shipped.
+  </div>
+</footer>
+
+</body>
+</html>
