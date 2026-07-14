@@ -1,3 +1,17 @@
+## [2026-07-14T22:51:55Z] Published Keynote + LSP showcases + demo links -- CONTROLLER-MADE @claude-cli
+
+- **What changed:** new `showcase/keynote.html` (Dynamo notes-to-table demo; gif regenerated sharp
+  900x506 from source, was blurry 426x240) + `showcase/lsp.html` (AutoLISP library, self-contained) +
+  `showcase/assets/keynote-notes-to-table.gif`. `index.html`: added `demo:` field to the Keynote and
+  AutoLISP project objects + a 'View live demo' link render + `.demolink` CSS. Commit `ec651cd`.
+- **Why:** the showcases existed only as local files in NP_ClaudeAgent/resume; Designer asked to publish
+  them to the public site and link from the project cards so the dynamic-table demo is shareable via URL.
+- **Note:** the keynote gif shows a Stantec/City of Bellevue project drawing; Designer explicitly approved
+  publishing it public ('just leave it').
+- **Origin:** Controller-made (NP_ClaudeAgent session), not an agent in this repo.
+
+---
+
 ## [2026-07-14T12:41:41Z] Theme persistence polish -- CONTROLLER-MADE @claude-cli
 
 - **What changed:** `index.html` now remembers the light/dark theme choice. Added a blocking head
