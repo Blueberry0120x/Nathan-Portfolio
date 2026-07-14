@@ -6,6 +6,9 @@
 <meta name="description" content="Nathan Pham — Civil infrastructure engineer (EIT): utility design, land development, permitting, and the design automation built to support it.">
 <title>Nathan Pham - Civil Engineer</title>
 
+<!-- Apply a saved theme choice before first paint (no flash of the wrong theme). -->
+<script>try{var _t=localStorage.getItem("theme");if(_t)document.documentElement.setAttribute("data-theme",_t);}catch(e){}</script>
+
 <style>
 /* ============================================================================
    DESIGN TOKENS  —  the single place to tune the whole page
@@ -601,7 +604,7 @@ filters.addEventListener("click",e=>{const b=e.target.closest(".filt");if(!b)ret
  grid.querySelectorAll(".proj").forEach(p=>p.classList.toggle("hidden",f!=="all"&&p.dataset.cat!==f));});
 
 const root=document.documentElement,tb=document.getElementById("themeBtn");
-tb.addEventListener("click",()=>{const cur=root.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");root.setAttribute("data-theme",cur==="dark"?"light":"dark");});
+tb.addEventListener("click",()=>{const cur=root.getAttribute("data-theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");const next=cur==="dark"?"light":"dark";root.setAttribute("data-theme",next);try{localStorage.setItem("theme",next);}catch(e){}});
 </script>
 
 </body>
