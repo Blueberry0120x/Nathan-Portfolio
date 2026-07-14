@@ -1,3 +1,17 @@
+## [2026-07-14T12:41:41Z] Theme persistence polish -- CONTROLLER-MADE @claude-cli
+
+- **What changed:** `index.html` now remembers the light/dark theme choice. Added a blocking head
+  script that applies a saved `localStorage` theme before first paint (no flash), and the toggle handler
+  now writes the choice to `localStorage`. Previously the theme reset to the OS preference on every reload.
+  Commit `6190c4f`.
+- **Also this session:** proofread + render-verified the whole page (desktop + mobile + dark) and the live
+  GitHub Pages deploy. About section, 7 project cards, 6 permit cards all render clean, zero console errors.
+  No content changes were needed -- the About paragraph and everything else were already complete.
+- **Origin:** Controller-made (NP_ClaudeAgent session at Designer request to 'finalize the portfolio'),
+  not an agent in this repo.
+
+---
+
 ## [2026-07-07T13:09:16Z] Added deep-linkable Permit projects section -- CONTROLLER-MADE @claude-cli
 
 - **What changed:** new `#permitting` section in `index.html` ("Permit projects") between the Projects
