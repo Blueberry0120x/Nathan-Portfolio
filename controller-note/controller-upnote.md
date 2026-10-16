@@ -4,6 +4,12 @@
 
 ---
 
+## [2026-10-16 14:53] Controller added a site icon (favicon) -- Controller-made, not yours -- UPDATE @vscode-ext
+
+- What: favicon.ico (16/32/48, NP initials on the accent #1e7aa8) at the root, showcase/assets/favicon.svg, and two <link rel="icon"> lines after <title> on index.html and the 3 showcase pages. No text or fact changed.
+- Why: AWS-Project's lesson 9 logs showed every first visit asking /favicon.ico and getting 403. His 10-15 standing word: Controller + AWS-Project drive portfolio changes and show him the final product.
+- Checked: all 4 pages load both icon links (200) on a local server.
+
 ## [2026-10-15 21:52] Floor Plan Sketchpad on AWS card added -- CONTROLLER-MADE @vscode-ext (Controller)
 
 - **What changed:** `index.html`: an eighth project card (Design automation), "Floor Plan Sketchpad on AWS", linking the public about page https://d2s2iyd9xg4xp8.cloudfront.net/aws/floorplan.html (absolute, so it works from GitHub Pages too). No plan or screenshot of his on the card.
