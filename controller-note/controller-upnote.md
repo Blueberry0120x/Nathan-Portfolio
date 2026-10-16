@@ -1,4 +1,16 @@
-## [2026-07-14T22:51:55Z] Published Keynote + LSP showcases + demo links -- CONTROLLER-MADE @claude-cli
+# # Controller -> Nathan-Portfolio
+
+> Newest entries at top. History preserved in git.
+
+---
+
+## [2026-10-15 17:35] Three claims now match the career record -- CONTROLLER-MADE @vscode-ext (Controller)
+
+- **What changed:** `index.html` (commit `1837361`): Austin light rail "co-lead utility designer" -> "main utility modeler" (stat, experience bullet, project card); "19+ jurisdictions permitted across CA & WA" -> 19+ jurisdictions in a self-built zoning standards table; experience bullet "Entitlement work across 19+ jurisdictions" -> "Entitlement work in California and Washington"; permit-platform card "30 sites across 19+ jurisdictions" -> "A standards table covering 19+ jurisdictions".
+- **Why:** the career record (NP_ClaudeAgent resume/master.md, VERIFY_CHECKLIST items a and b) shows main modeler, permits in 3 jurisdictions, and no cleared site count; the public chat (AWS-Project) repeats this page. Designer's go 2026-10-15: "Ok go for it".
+- **Verified:** GitHub Pages build `built`; live page read with Playwright: old wording gone, new wording present.
+
+## [2026-07-14 22:51] Published Keynote + LSP showcases + demo links -- CONTROLLER-MADE @claude-cli
 
 - **What changed:** new `showcase/keynote.html` (Dynamo notes-to-table demo; gif regenerated sharp
   900x506 from source, was blurry 426x240) + `showcase/lsp.html` (AutoLISP library, self-contained) +
@@ -12,7 +24,7 @@
 
 ---
 
-## [2026-07-14T12:41:41Z] Theme persistence polish -- CONTROLLER-MADE @claude-cli
+## [2026-07-14 12:41] Theme persistence polish -- CONTROLLER-MADE @claude-cli
 
 - **What changed:** `index.html` now remembers the light/dark theme choice. Added a blocking head
   script that applies a saved `localStorage` theme before first paint (no flash), and the toggle handler
@@ -26,7 +38,7 @@
 
 ---
 
-## [2026-07-07T13:09:16Z] Added deep-linkable Permit projects section -- CONTROLLER-MADE @claude-cli
+## [2026-07-07 13:09] Added deep-linkable Permit projects section -- CONTROLLER-MADE @claude-cli
 
 - **What changed:** new `#permitting` section in `index.html` ("Permit projects") between the Projects
   and Skills sections, with 6 anchor-addressable cards (`#perm-redwood/elcajon/euclid/rainier/astreet/143rd`)
@@ -42,7 +54,7 @@
 
 ---
 
-## [2026-07-07T04:19:14Z] Removed M.S./AI degree from education -- CONTROLLER-MADE @claude-cli
+## [2026-07-07 04:19] Removed M.S./AI degree from education -- CONTROLLER-MADE @claude-cli
 
 - **What changed:** deleted the "M.S., Artificial Intelligence -- University of the Cumberlands --
   enrolled Fall 2026" education card from `index.html`. Per Designer directive to strip every mention of
@@ -55,7 +67,7 @@
 
 ---
 
-## [2026-07-07T04:05:40Z] index.html structural refactor + spacing tokens -- CONTROLLER-MADE @claude-cli
+## [2026-07-07 04:05] index.html structural refactor + spacing tokens -- CONTROLLER-MADE @claude-cli
 
 - **What changed:** `index.html` rebuilt for maintainability -- NO visual/content change. (1) Added a
   real HTML5 skeleton (`<!DOCTYPE html>` / `<html lang>` / `<head>` / `<body>`); the file was a raw
@@ -80,7 +92,7 @@
 
 ---
 
-## [2026-07-06T23:42:06Z] Design replacement + GitHub Pages enabled -- CONTROLLER-MADE @claude-cli
+## [2026-07-06 23:42] Design replacement + GitHub Pages enabled -- CONTROLLER-MADE @claude-cli
 
 - **What changed:** `index.html` replaced end to end -- the prior showcase design (navy gradient hero,
   icon-square cards) was swapped for the editorial design approved in a parallel Controller session
