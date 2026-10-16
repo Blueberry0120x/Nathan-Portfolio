@@ -4,6 +4,11 @@
 
 ---
 
+## [2026-10-15 17:50] index.html edit reverted before commit, nothing changed -- CONTROLLER-MADE @vscode-ext (Controller)
+
+- **What happened:** the Controller edited two lines of `index.html` (a stats card and the entitlement bullet), then reverted them before any commit. The file matches `c520656`; nothing was published.
+- **Why:** the change waits for his word in the Controller's session.
+
 ## [2026-10-15 17:37] His corrections: co-lead modeler; permit jurisdictions named -- CONTROLLER-MADE @vscode-ext (Controller)
 
 - **What changed:** `index.html` (commit `c520656`): Austin light rail role -> "co-lead modeler" (stat, experience bullet, project card); the entitlement bullet now reads "Entitlement and permit work across California and Washington, including Seattle, Bellevue, San Diego, Los Angeles, Anaheim, Orange County, Escondido, and Chula Vista".
