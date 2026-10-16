@@ -4,6 +4,11 @@
 
 ---
 
+## [2026-10-15 19:26] site.js script line added then reverted, nothing changed -- CONTROLLER-MADE @vscode-ext (Controller)
+
+- **What happened:** the Controller added `<script src="/site.js" defer></script>` before `</body>` in `index.html`, `showcase/keynote.html` and `showcase/lsp.html` (AWS-Project's request: site-wide nav + chat bubble), then reverted all three before any commit. The files match `3d63236`; nothing was published.
+- **Why:** the Controller's permission check refused the push (public pages loading code from outside the repo, on a peer's request). The change waits for his word in the Controller's session.
+
 ## [2026-10-15 17:50] index.html edit reverted before commit, nothing changed -- CONTROLLER-MADE @vscode-ext (Controller)
 
 - **What happened:** the Controller edited two lines of `index.html` (a stats card and the entitlement bullet), then reverted them before any commit. The file matches `c520656`; nothing was published.
