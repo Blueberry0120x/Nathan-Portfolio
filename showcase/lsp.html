@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CurioVerse &mdash; Design-Automation Showcase</title>
+<title>LSP Library &mdash; Design-Automation Showcase</title>
 <style>
   :root {
     --paper: #f4f6f5;
@@ -159,24 +159,38 @@
     body { background: #fff; }
     section, .hero { break-inside: avoid; }
   }
+
+.cta { display:inline-block; margin-top:18px; padding:12px 22px; border-radius:8px;
+  background:var(--accent); color:#fff; font-weight:600; text-decoration:none; }
+.cta:hover { background:var(--accent-deep); }
+.tiles { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:22px; }
+.tile { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:14px; }
+.tile b { display:block; font-size:22px; color:var(--accent); }
+.tile span { font-size:13px; color:var(--muted); }
+details.story { margin:28px 0; }
+details.story > summary { cursor:pointer; font-weight:600; color:var(--accent); padding:10px 20px;
+  max-width:880px; margin:0 auto; }
+@media (max-width:640px) { .tiles { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
 
 <div class="hero">
   <div class="wrap">
-    <p class="eyebrow">Design Automation &mdash; Tooling Showcase <span class="status-pill">Production tool &middot; portfolio exhibit</span></p>
-    <h1 class="title">CurioVerse: turning a sprawling AutoLISP library into a <span class="accent">searchable</span> command universe</h1>
-    <p class="subtitle">A folder of loose <b>AutoCAD LISP routines</b> nobody could navigate, harvested into a self-updating catalog &mdash; a searchable 2D list and an interactive 3D command map, both generated from <b>one source of truth</b> so they can never drift.</p>
-    <div class="meta">
-      <span class="chip"><b>Discipline</b> &nbsp;AEC / CAD Standards</span>
-      <span class="chip"><b>Role</b> &nbsp;Library steward &amp; tooling</span>
-      <span class="chip"><b>Stack</b> &nbsp;AutoCAD LISP + Python</span>
-      <span class="chip"><b>Output</b> &nbsp;JSON + two linked viewers</span>
+    <p class="eyebrow">Design automation</p>
+    <h1 class="title">LSP Library</h1>
+    <p class="subtitle">68 AutoCAD commands and 14 suites, searchable by what you want to do. It ships inside <b>CurioVerse</b>, my desktop app for the library and its tools.</p>
+    <a class="cta" href="curioverse-library.html">Open the library &rarr;</a>
+    <div class="tiles">
+      <div class="tile"><b>68 + 14</b><span>commands and suites, each with what it does and how to run it</span></div>
+      <div class="tile"><b>1 source</b><span>the list and a 3D command map are built from the code itself</span></div>
+      <div class="tile"><b>Ask AI</b><span>the assistant on my site names the right command for a task</span></div>
     </div>
-    <p class="subtitle"><a href="curioverse-library.html">See the library &rarr;</a> the public Lite copy: every command, no source.</p>
   </div>
 </div>
+
+<details class="story">
+<summary>How I built it</summary>
 
 <section>
   <div class="wrap">
@@ -204,7 +218,7 @@
     <p class="kicker">Why it matters</p>
     <h2>A library you can actually use</h2>
     <div class="metrics">
-      <div class="metric"><div class="n">90</div><div class="l">catalog records &mdash; 71 commands + 19 auto-grouped suite menus</div></div>
+      <div class="metric"><div class="n">82</div><div class="l">catalog records &mdash; 68 commands + 14 suites</div></div>
       <div class="metric"><div class="n">9</div><div class="l">categories, grouped automatically from file structure</div></div>
       <div class="metric"><div class="n">2&rarr;1</div><div class="l">two viewers generated from one JSON &mdash; they cannot drift</div></div>
     </div>
@@ -256,10 +270,11 @@
     </div>
   </div>
 </section>
+</details>
 
 <footer>
   <div class="wrap">
-    <b>Status &amp; provenance.</b> Internal production tooling for an AutoCAD/Civil 3D LISP library. This page is a capability exhibit &mdash; a portfolio link and supporting proof for applications. Catalog figures reflect the current build (71 commands + 19 suite menus across 9 categories).<br>
+    <b>Status &amp; provenance.</b> Internal production tooling for an AutoCAD/Civil 3D LISP library. This page is a capability exhibit &mdash; a portfolio link and supporting proof for applications. Catalog figures reflect the current public copy (68 commands + 14 suites across 10 categories).<br>
     <b>Scope.</b> Describes Nathan Pham's own harvesting-and-cataloging tooling and workflow at capability level. No employer source code or client data is published; command structure is shown, not shipped.
   </div>
 </footer>
