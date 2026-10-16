@@ -4,6 +4,11 @@
 
 ---
 
+## [2026-10-15 20:06] Floor Plan card added then reverted, nothing changed -- CONTROLLER-MADE @vscode-ext (Controller)
+
+- **What happened:** the Controller added a "Floor Plan Sketchpad on AWS" project card to `index.html` (AWS-Project's wording, checked against the live about page), then reverted it before any commit. The file matches `e6fb034`; nothing was published.
+- **Why:** the Controller's permission check refused the commit (a public-site change on a peer's request). It waits for his word in the Controller's session.
+
 ## [2026-10-15 19:26] site.js script line added then reverted, nothing changed -- CONTROLLER-MADE @vscode-ext (Controller)
 
 - **What happened:** the Controller added `<script src="/site.js" defer></script>` before `</body>` in `index.html`, `showcase/keynote.html` and `showcase/lsp.html` (AWS-Project's request: site-wide nav + chat bubble), then reverted all three before any commit. The files match `3d63236`; nothing was published.
