@@ -4,6 +4,11 @@
 
 ---
 
+## [2026-10-15 21:52] Floor Plan Sketchpad on AWS card added -- CONTROLLER-MADE @vscode-ext (Controller)
+
+- **What changed:** `index.html`: an eighth project card (Design automation), "Floor Plan Sketchpad on AWS", linking the public about page https://d2s2iyd9xg4xp8.cloudfront.net/aws/floorplan.html (absolute, so it works from GitHub Pages too). No plan or screenshot of his on the card.
+- **Why:** his words in the Controller session 2026-10-15: "Card yes". Wording from AWS-Project after the app passed its live check; the Controller read the live about page in a browser and every claim on the card is on it.
+
 ## [2026-10-15 20:06] Floor Plan card added then reverted, nothing changed -- CONTROLLER-MADE @vscode-ext (Controller)
 
 - **What happened:** the Controller added a "Floor Plan Sketchpad on AWS" project card to `index.html` (AWS-Project's wording, checked against the live about page), then reverted it before any commit. The file matches `e6fb034`; nothing was published.
