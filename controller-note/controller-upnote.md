@@ -4,6 +4,11 @@
 
 ---
 
+## [2026-10-15 17:37] His corrections: co-lead modeler; permit jurisdictions named -- CONTROLLER-MADE @vscode-ext (Controller)
+
+- **What changed:** `index.html` (commit `c520656`): Austin light rail role -> "co-lead modeler" (stat, experience bullet, project card); the entitlement bullet now reads "Entitlement and permit work across California and Washington, including Seattle, Bellevue, San Diego, Los Angeles, Anaheim, Orange County, Escondido, and Chula Vista".
+- **Why:** his words 2026-10-15, after the 1837361 fix: "Colead modeler" and "So i did Seattle Bellevue Sandiego, la, Anaheim, oc, escondido, Chula Vista, and so on". Recorded in NP_ClaudeAgent resume/master.md (6.1, 4.5a).
+
 ## [2026-10-15 17:35] Three claims now match the career record -- CONTROLLER-MADE @vscode-ext (Controller)
 
 - **What changed:** `index.html` (commit `1837361`): Austin light rail "co-lead utility designer" -> "main utility modeler" (stat, experience bullet, project card); "19+ jurisdictions permitted across CA & WA" -> 19+ jurisdictions in a self-built zoning standards table; experience bullet "Entitlement work across 19+ jurisdictions" -> "Entitlement work in California and Washington"; permit-platform card "30 sites across 19+ jurisdictions" -> "A standards table covering 19+ jurisdictions".
