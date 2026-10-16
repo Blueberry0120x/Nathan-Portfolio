@@ -204,7 +204,7 @@
   <div class="wrap">
     <p class="eyebrow">Autodesk University &mdash; Class Proposal <span class="status-pill">Submitted 2026 &middot; refining for 2027</span></p>
     <h1 class="title">Keynote Suite: <span class="accent">bi-directional</span> keynote &amp; table automation in Civil 3D</h1>
-    <p class="subtitle">How a production civil designer turned the slowest, most error-prone step in sheet production &mdash; <b>manual keynote callouts and their tables</b> &mdash; into a two-way Dynamo engine that keeps drawing and schedule in sync. A zero-to-hero story of one workflow, five versions deep.</p>
+    <p class="subtitle">The slowest, most error-prone step in my sheet production was <b>keynote callouts and their tables, done by hand</b>. I turned it into a two-way Dynamo engine that keeps the drawing and the schedule in sync. It took five versions to get there.</p>
     <div class="meta">
       <span class="chip"><b>Track</b> &nbsp;Civil Infrastructure / AEC</span>
       <span class="chip"><b>Format</b> &nbsp;60-min Instructional Demo</span>
@@ -216,21 +216,21 @@
 
 <section>
   <div class="wrap">
-    <p class="kicker">The arc</p>
-    <h2>From a manual chore to a synchronized engine</h2>
-    <p class="body">Keynotes look trivial &mdash; a number on the drawing, a matching row in a table. In a real sheet set they are neither. Renumber one callout and every downstream table drifts; add a note and someone re-types the schedule. On a large civil package that is hours of senior-designer time and a standing source of QA errors.</p>
+    <p class="kicker">The problem</p>
+    <h2>Keynotes by hand, tables by hand</h2>
+    <p class="body">A keynote is a number on the drawing and a matching row in a table. Simple, until it is a real sheet set. Renumber one callout and every table after it is off; add a note and someone re-types the schedule. On a large civil package that is hours of senior-designer time, and the same QA errors keep coming back.</p>
     <div class="arc">
       <div class="stage zero">
-        <div class="n">Zero &middot; the manual state</div>
+        <div class="n">Before &middot; by hand</div>
         <h3>Callout by hand, table by hand</h3>
-        <p>Designers place keynote tags one at a time, then hand-build and hand-maintain the keynote table. Every renumber, insertion, or note edit means re-checking the whole schedule. Slow, and easy to get wrong at QA.</p>
+        <p>Designers place keynote tags one at a time, then build and keep up the keynote table by hand. Every renumber, insertion, or note edit means re-checking the whole schedule. Slow, and easy to get wrong at QA.</p>
       </div>
       <div class="stage hero">
-        <div class="n">Hero &middot; the engine</div>
+        <div class="n">After &middot; the engine</div>
         <h3>One source of truth, two-way sync</h3>
-        <p>A Dynamo engine reads the drawing and writes the table &mdash; and reads the table back to the drawing. Renumber once; tags and schedule stay consistent automatically. The designer curates content instead of copying it.</p>
+        <p>A Dynamo engine reads the drawing and writes the table, then reads the table back to the drawing. Renumber once and the tags and schedule stay matched. The designer works on the notes instead of copying them.</p>
       </div>
-      <div class="arrow">v2.0 &rarr; v3.0 &rarr; v4.0 &rarr; v5.0 &nbsp;&mdash;&nbsp; five iterations of a real production tool</div>
+      <div class="arrow">v2.0 &rarr; v3.0 &rarr; v4.0 &rarr; v5.0 &nbsp;&middot;&nbsp; five versions of a real production tool</div>
     </div>
   </div>
 </section>
@@ -238,13 +238,13 @@
 <section>
   <div class="wrap">
     <p class="kicker">Why it matters</p>
-    <h2>The payoff a room of designers will feel</h2>
+    <h2>What it saves</h2>
     <div class="metrics">
-      <div class="metric"><div class="n">60&ndash;80%</div><div class="l">reduction in keynote-and-revision time on production sheets</div></div>
-      <div class="metric"><div class="n">2-way</div><div class="l">drawing &harr; table sync &mdash; edit either, both stay correct</div></div>
-      <div class="metric"><div class="n">v5</div><div class="l">five production iterations; now generalized as a reusable Dynamo engine</div></div>
+      <div class="metric"><div class="n">60&ndash;80%</div><div class="l">less keynote-and-revision time on production sheets</div></div>
+      <div class="metric"><div class="n">2-way</div><div class="l">drawing &harr; table sync: edit either one, both stay correct</div></div>
+      <div class="metric"><div class="n">v5</div><div class="l">five production versions; now a reusable Dynamo engine</div></div>
     </div>
-    <div class="note">The 60&ndash;80% figure is a measured estimate from production use on my own sheet sets; the talk will show the before/after workflow the number comes from, not just the headline.</div>
+    <div class="note">The 60&ndash;80% is a measured estimate from using it on my own sheet sets. The talk shows the before-and-after workflow the number comes from.</div>
   </div>
 </section>
 
@@ -252,7 +252,7 @@
   <div class="wrap">
     <p class="kicker">See it in action</p>
     <h2>The two-way sync, live in Civil 3D</h2>
-    <p class="body">Edit a note in the drawing and the schedule updates; adjust the schedule and the drawing follows &mdash; one source of truth, reconciled by the Dynamo graph. No hand-copying, no drift.</p>
+    <p class="body">Edit a note in the drawing and the schedule updates. Change the schedule and the drawing follows. The Dynamo graph keeps one source of truth, so nothing is copied by hand and nothing drifts.</p>
     <figure class="demo">
       <img src="assets/keynote-notes-to-table.gif" alt="Keynote Suite running in Civil 3D: a Dynamo graph syncing keynote callouts with the construction-note table in both directions" loading="lazy">
       <figcaption>Keynote Suite &middot; Dynamo bi-directional sync between Civil 3D keynote callouts and the construction-note table.</figcaption>
@@ -262,14 +262,14 @@
 
 <section>
   <div class="wrap">
-    <p class="kicker">The build, honestly</p>
-    <h2>Five versions of learning in public</h2>
-    <p class="body">The interesting part for an AU audience is not the finished graph &mdash; it is the road to it. Each version solved a failure the last one exposed. That evolution is the teachable content.</p>
+    <p class="kicker">How I built it</p>
+    <h2>Five versions, each fixing what the last one showed</h2>
+    <p class="body">Each version fixed a problem the one before it showed me. Those steps are what I would teach at AU.</p>
     <div class="versions">
-      <div class="ver"><div class="tag">v2.0</div><div class="txt"><b>Callout automation.</b> Place and number keynote tags from a controlled list &mdash; kill the one-at-a-time placement.</div></div>
+      <div class="ver"><div class="tag">v2.0</div><div class="txt"><b>Callout automation.</b> Place and number keynote tags from a controlled list, instead of one at a time.</div></div>
       <div class="ver"><div class="tag">v3.0</div><div class="txt"><b>Table generation.</b> Build the keynote table from the tags in the drawing. One direction: drawing &rarr; table.</div></div>
-      <div class="ver"><div class="tag">v4.0</div><div class="txt"><b>Bi-directional sync.</b> Read the table back to the drawing so an edit in either place reconciles &mdash; the hard problem, and the heart of the class.</div></div>
-      <div class="ver"><div class="tag">v5.0</div><div class="txt"><b>Generalized engine.</b> Refactored into a reusable Dynamo tool (DynamicTag / TableNote) so the pattern applies beyond one project's standards.</div></div>
+      <div class="ver"><div class="tag">v4.0</div><div class="txt"><b>Bi-directional sync.</b> Read the table back to the drawing so an edit in either place carries over. This was the hard part, and it is the core of the class.</div></div>
+      <div class="ver"><div class="tag">v5.0</div><div class="txt"><b>Reusable engine.</b> Rebuilt as a reusable Dynamo tool (DynamicTag / TableNote) so it works beyond one project's standards.</div></div>
     </div>
   </div>
 </section>
@@ -277,8 +277,8 @@
 <section>
   <div class="wrap">
     <p class="kicker">The submission</p>
-    <h2>Form-ready proposal copy</h2>
-    <p class="body">Paste-ready for the Autodesk University speaker portal. Written to the standard fields.</p>
+    <h2>The class proposal</h2>
+    <p class="body">The proposal text, written to the standard fields of the Autodesk University speaker portal.</p>
     <div class="proposal">
       <div class="ph">AU Class Proposal</div>
       <div class="pb">
@@ -292,12 +292,12 @@
         </div>
         <div class="field">
           <div class="fl">Abstract</div>
-          <div class="fv">Keynotes are one of the last hand-maintained links in Civil 3D sheet production: a tag on the drawing, a matching row in a table, and a manual re-check every time either changes. This class walks through a production Dynamo tool &mdash; the Keynote Suite &mdash; that automates keynote callouts and their tables and, critically, keeps them synchronized in both directions. Edit a note in the drawing and the schedule updates; adjust the schedule and the drawing follows. We trace the tool across five real versions, from first callout automation to a generalized, reusable engine, and show the measured 60&ndash;80% reduction in keynote-and-revision time on live sheet sets. You will leave with the design pattern, the failure modes we hit, and a clear path to build the same two-way link into your own standards &mdash; no prior Dynamo mastery required.</div>
+          <div class="fv">Keynotes are one of the last things in Civil 3D sheet production still kept up by hand: a tag on the drawing, a matching row in a table, and a manual re-check every time either one changes. This class walks through the Keynote Suite, a production Dynamo tool that automates keynote callouts and their tables and keeps the two in sync in both directions. Edit a note in the drawing and the schedule updates; change the schedule and the drawing follows. We go through five real versions of the tool, from the first callout automation to a reusable engine, and show the measured 60&ndash;80% cut in keynote-and-revision time on live sheet sets. You leave with the design pattern, the problems we hit, and the steps to build the same two-way link into your own standards. You do not need to be a Dynamo expert.</div>
         </div>
         <div class="field">
           <div class="fl">Learning objectives &mdash; attendees will be able to</div>
           <ol class="objs">
-            <li>Diagnose where manual keynote and table workflows cost time and introduce QA errors in a Civil 3D sheet set.</li>
+            <li>Find where manual keynote and table workflows cost time and cause QA errors in a Civil 3D sheet set.</li>
             <li>Explain the bi-directional sync pattern that keeps drawing tags and schedule tables consistent from a single source of truth.</li>
             <li>Build the core of a keynote-automation Dynamo graph, including reading from and writing back to the drawing.</li>
             <li>Adapt the engine to their own office standards and estimate the time savings on their real projects.</li>
@@ -315,14 +315,14 @@
     <div class="speaker">
       <div class="name">Nathan Pham</div>
       <div class="tagline">Utility Designer / Modeler, Stantec &middot; automation &amp; AI systems builder</div>
-      <p class="body" style="margin-top:6px;">Civil / infrastructure designer on major transit work (Austin Transit Partnership Light Rail), who builds the automation he wishes existed: an ORD/VBA utility-design engine with an AWWA C110/C153 bend classifier, an AutoLISP command library, and the Keynote Suite. Recently extended into full software systems &mdash; a land-development permitting platform and multi-agent tooling. Teaches from production use, not theory.</p>
+      <p class="body" style="margin-top:6px;">Civil and infrastructure designer on major transit work (Austin Transit Partnership Light Rail). He builds his own automation: an ORD/VBA utility-design engine with an AWWA C110/C153 bend classifier, an AutoLISP command library, and the Keynote Suite. Lately that has grown into full software systems: a land-development permitting platform and multi-agent tooling. He teaches from tools he uses in production.</p>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <b>Status &amp; provenance.</b> Submitted to the Autodesk University 2026 CFP (closed April 7, 2026); not selected for AU 2026 (Sep 15&ndash;17, Las Vegas). This page is the refined exhibit &mdash; retargeted for the AU 2027 CFP, a speaker portfolio link, and supporting proof for applications.<br>
-    <b>Scope.</b> Showcases Nathan Pham's own Keynote Suite tooling and workflow. No client data or employer source code is published; screenshots and specifics are scrubbed to capability level.
+    <b>Status.</b> Submitted to the Autodesk University 2026 CFP (closed April 7, 2026); not selected for AU 2026 (Sep 15&ndash;17, Las Vegas). This page is the refined version, aimed at the AU 2027 CFP.<br>
+    <b>Scope.</b> My own Keynote Suite tooling and workflow. No client data or employer source code is published here; screenshots and details are scrubbed to capability level.
   </div>
 </footer>

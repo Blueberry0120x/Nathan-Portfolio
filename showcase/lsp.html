@@ -194,47 +194,47 @@ details.story > summary { cursor:pointer; font-weight:600; color:var(--accent); 
 
 <section>
   <div class="wrap">
-    <p class="kicker">The arc</p>
-    <h2>From a folder nobody could navigate to a live catalog</h2>
-    <p class="body">A CAD team accumulates LISP the way a garage accumulates tools &mdash; powerful, but scattered, undocumented, and impossible to search. The best routines get buried; the same command gets re-written because no one knew it existed. The fix was not more code &mdash; it was <b>making the library legible</b>.</p>
+    <p class="kicker">The problem</p>
+    <h2>From a folder nobody could navigate to a catalog you can search</h2>
+    <p class="body">A CAD team piles up LISP the way a garage piles up tools: useful, but scattered, undocumented, and impossible to search. The best routines get buried, and the same command gets written again because no one knew it was there. The library needed <b>a map</b>, so that is what I built.</p>
     <div class="arc">
       <div class="stage zero">
-        <div class="n">Zero &middot; the scattered state</div>
+        <div class="n">Before &middot; scattered</div>
         <h3>Routines with no map</h3>
-        <p>Dozens of <span style="font-family:var(--mono)">.lsp</span> files across an evolving master library. No search, no categories, uneven headers, no way to see what exists or how commands relate. Discovery by tribal knowledge.</p>
+        <p>Dozens of <span style="font-family:var(--mono)">.lsp</span> files across a master library that keeps changing. No search, no categories, uneven headers, and no way to see what exists or how the commands relate. You found things by asking around.</p>
       </div>
       <div class="stage hero">
-        <div class="n">Hero &middot; the catalog</div>
-        <h3>One JSON, two synchronized viewers</h3>
-        <p>A pipeline parses every <span style="font-family:var(--mono)">(defun c:&hellip;)</span> block into a structured catalog, then generates a searchable list <em>and</em> a 3D command map from the same data &mdash; so the two views can never disagree.</p>
+        <div class="n">After &middot; the catalog</div>
+        <h3>One JSON file, two views that always match</h3>
+        <p>A pipeline reads every <span style="font-family:var(--mono)">(defun c:&hellip;)</span> block into one catalog, then builds a searchable list <em>and</em> a 3D command map from that same data, so the two views always agree.</p>
       </div>
-      <div class="arrow">sync &rarr; inspect &rarr; stage &rarr; build &nbsp;&mdash;&nbsp; a repeatable harvest, not a one-off cleanup</div>
+      <div class="arrow">sync &rarr; inspect &rarr; stage &rarr; build &nbsp;&middot;&nbsp; a harvest I can rerun, not a one-time cleanup</div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <p class="kicker">Why it matters</p>
+    <p class="kicker">The numbers</p>
     <h2>A library you can actually use</h2>
     <div class="metrics">
-      <div class="metric"><div class="n">82</div><div class="l">catalog records &mdash; 68 commands + 14 suites</div></div>
+      <div class="metric"><div class="n">82</div><div class="l">catalog records: 68 commands + 14 suites</div></div>
       <div class="metric"><div class="n">9</div><div class="l">categories, grouped automatically from file structure</div></div>
-      <div class="metric"><div class="n">2&rarr;1</div><div class="l">two viewers generated from one JSON &mdash; they cannot drift</div></div>
+      <div class="metric"><div class="n">2&rarr;1</div><div class="l">two views built from one JSON file, so they cannot drift apart</div></div>
     </div>
-    <div class="note">Beyond discoverability, a <b>10-dimension code-standards scorecard</b> grades 43 files and a cross-command relationship analyzer maps how the routines interrelate &mdash; turning "a pile of scripts" into a maintainable, audited catalog.</div>
+    <div class="note">There is also a <b>10-dimension code-standards scorecard</b> that grades 43 files, and a cross-command analyzer that maps how the routines relate. Together they turn "a pile of scripts" into a catalog that can be maintained and audited.</div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <p class="kicker">The build, honestly</p>
-    <h2>A four-stage harvester, not a hand-made list</h2>
-    <p class="body">The catalog is generated, never hand-edited &mdash; so it stays true to the source every time it runs. Four stages, each guarding against a different way a hand-maintained index goes stale.</p>
+    <p class="kicker">How it runs</p>
+    <h2>Four stages, no hand-made list</h2>
+    <p class="body">Nobody edits the catalog by hand. It is generated from the source on every run, so it stays true to the code. Each of the four stages stops a different way a hand-kept index goes stale.</p>
     <div class="versions">
-      <div class="ver"><div class="tag">Sync</div><div class="txt"><b>Mirror the source, read-only.</b> One-way copy of the LISP master library into a working mirror &mdash; the source is never touched or risked.</div></div>
-      <div class="ver"><div class="tag">Inspect</div><div class="txt"><b>Drift report.</b> Diff source against the mirror so the catalog can never silently fall behind the real library.</div></div>
-      <div class="ver"><div class="tag">Stage</div><div class="txt"><b>Filter to canonical.</b> Keep the library files that belong in the catalog and drop scratch and legacy noise.</div></div>
+      <div class="ver"><div class="tag">Sync</div><div class="txt"><b>Mirror the source, read-only.</b> A one-way copy of the LISP master library into a working mirror, so the source is never touched.</div></div>
+      <div class="ver"><div class="tag">Inspect</div><div class="txt"><b>Drift report.</b> Compare the source against the mirror so the catalog never falls behind the real library without anyone noticing.</div></div>
+      <div class="ver"><div class="tag">Stage</div><div class="txt"><b>Keep the real files.</b> Keep the library files that belong in the catalog and drop the scratch and legacy files.</div></div>
       <div class="ver"><div class="tag">Build</div><div class="txt"><b>Parse &rarr; JSON &rarr; viewers.</b> Read every <span style="font-family:var(--mono)">(defun c:&hellip;)</span> into <span style="font-family:var(--mono)">CommandLibrary.json</span>, then render both viewers and the standards scorecard from it.</div></div>
     </div>
   </div>
@@ -242,18 +242,18 @@ details.story > summary { cursor:pointer; font-weight:600; color:var(--accent); 
 
 <section>
   <div class="wrap">
-    <p class="kicker">The payoff</p>
+    <p class="kicker">Two views</p>
     <h2>Two ways into the same library</h2>
     <div class="arc">
       <div class="stage hero">
         <div class="n">2D &middot; searchable list</div>
-        <h3>Find it by name or by intent</h3>
-        <p>Full-text search, category and suite navigation, per-command source, and a <b>"What do you want to do?"</b> task map that goes from intent straight to the right command. Each entry cross-links into the 3D view.</p>
+        <h3>Find it by name or by what you want to do</h3>
+        <p>Full-text search, browsing by category and suite, each command's source, and a <b>"What do you want to do?"</b> task map that takes you straight to the right command. Each entry links into the 3D view.</p>
       </div>
       <div class="stage hero">
         <div class="n">3D &middot; command universe</div>
         <h3>See how the library is shaped</h3>
-        <p>A node-graph star map &mdash; core to category hubs to suite stars to command satellites &mdash; on a fully offline force-graph. Click a star for details and a deep link back into the list.</p>
+        <p>A star map of the library: the core, then category hubs, then suite stars, then the commands around them, drawn with a force graph that runs fully offline. Click a star for its details and a link back into the list.</p>
       </div>
     </div>
   </div>
@@ -266,7 +266,7 @@ details.story > summary { cursor:pointer; font-weight:600; color:var(--accent); 
     <div class="speaker">
       <div class="name">Nathan Pham</div>
       <div class="tagline">Utility Designer / Modeler, Stantec &middot; automation &amp; AI systems builder</div>
-      <p class="body" style="margin-top:6px;">Civil / infrastructure designer on major transit work (Austin Transit Partnership Light Rail) who builds the automation he wishes existed: an ORD/VBA utility-design engine with an AWWA C110/C153 bend classifier, the Keynote Suite for Civil 3D, and this LSP command-library pipeline. The value here is <b>stewardship</b> &mdash; not authoring every routine, but making an unwieldy shared library discoverable, audited, and maintainable.</p>
+      <p class="body" style="margin-top:6px;">I'm a civil and infrastructure designer on major transit work (Austin Transit Partnership Light Rail), and I build my own automation: an ORD/VBA utility-design engine with an AWWA C110/C153 bend classifier, the Keynote Suite for Civil 3D, and this LSP command-library pipeline. I did not write every routine in this library. <b>My part is looking after it</b>: making a big shared library easy to search, audited, and maintained.</p>
     </div>
   </div>
 </section>
@@ -274,8 +274,8 @@ details.story > summary { cursor:pointer; font-weight:600; color:var(--accent); 
 
 <footer>
   <div class="wrap">
-    <b>Status &amp; provenance.</b> Internal production tooling for an AutoCAD/Civil 3D LISP library. This page is a capability exhibit &mdash; a portfolio link and supporting proof for applications. Catalog figures reflect the current public copy (68 commands + 14 suites across 10 categories).<br>
-    <b>Scope.</b> Describes Nathan Pham's own harvesting-and-cataloging tooling and workflow at capability level. No employer source code or client data is published; command structure is shown, not shipped.
+    <b>Status.</b> Internal production tooling for an AutoCAD/Civil 3D LISP library. Catalog figures are from the current public copy (68 commands + 14 suites across 10 categories).<br>
+    <b>Scope.</b> My own harvesting and cataloging tools and workflow, at capability level. No employer source code or client data is published here; the command structure is shown, not shipped.
   </div>
 </footer>
 
