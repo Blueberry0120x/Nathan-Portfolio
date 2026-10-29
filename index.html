@@ -566,6 +566,11 @@ const PROJECTS=[
   det:["<b>Palomar carport</b> &mdash; wood calc package under NDS-2018 and ASCE 7-22 (96 mph), under the Engineer of Record.","<b>Euclid, San Diego</b> &mdash; CBC Chapter 7 fire-wall design with the full DS permit-form set (DS-375 / 3032 / 420 / 4107 / 165).","<b>Bellevue porch cover (Permit 23-121210-BR)</b> &mdash; sole designer and applicant of record; permit issued and construction complete. I derived the full ASCE 7 design loads (wind, snow, live/dead), ran a full seismic Equivalent Lateral Force analysis (Ss/S1, SDS/SD1, R=6.5, base shear, drift and min-Cs checks), and designed the timber rafters, beam, and columns per NDS-2018 ASD (column stability factor, slenderness, and the full CD/CM/CF/Ci adjustment stack). Then I verified the column's axial bearing capacity and confirmed footing depth against code requirements myself."],
   stack:"NDS-2018 &middot; ASCE 7-22 &middot; CBC"},
 
+ {cat:"auto",dot:"var(--auto)",name:"OpenRoads utility-design suite",one:"The subsurface-utility workflow in OpenRoads, automated end to end and used on four programs.",
+  tags:["OpenRoads","VBA","Excel"],
+  det:["Places drainage nodes, connects conduits with computed inverts, and builds the profiles and cross-sections.","Rebuilds the edge of pavement and reports cover depth and inspection results to Excel.","Deployed on <b>4 major programs</b>: California High-Speed Rail, I-10, Yellowstone, and the Austin light rail.","On Yellowstone my scripts became internal production standards. On Austin I trained the utility team and wrote the production documentation and standards."],
+  stack:"OpenRoads Designer &middot; VBA &middot; Excel"},
+
  {cat:"auto",dot:"var(--auto)",name:"Utility modeling engine",one:"Automates the repetitive part of utility layout.",
   tags:["OpenRoads","VBA","AWWA"],
   det:["Handles fitting layout so the modeling isn't done by hand every time.","Runs an <b>AWWA C110 / C153 bend classifier</b> to keep fittings to standard.","My design group uses it in production."],
@@ -573,8 +578,13 @@ const PROJECTS=[
 
  {cat:"auto",dot:"var(--auto)",name:"Keynote Suite (Dynamo)",one:"Keynotes and schedule tables that stay in sync.",
   tags:["Dynamo","Civil 3D","Revit"],
-  det:["A set of Dynamo graphs that handle keynote callouts and their schedule tables in Civil 3D and Revit.","Change the callout or the table and the other one follows.","Cut keynote and revision time roughly <b>60&ndash;80%</b> on the sheets I ran it on."],
+  det:["A set of Dynamo graphs that handle keynote callouts and their schedule tables in Civil 3D and Revit.","Change the callout or the table and the other one follows.","Cut keynote and revision time roughly <b>60&ndash;80%</b> on the sheets I ran it on.","The idea was accepted into the <b>Stantec Innovation Office</b> incubation track."],
   stack:"Dynamo &middot; Civil 3D &middot; Revit", demo:"showcase/keynote.html"},
+
+ {cat:"auto",dot:"var(--auto)",name:"Revit automation and an AI model bridge",one:"Revit API tools in Dynamo and Python, and a safe way for an AI agent to read a model.",
+  tags:["Revit API","Dynamo","Python","MCP"],
+  det:["Door, window, and room schedules go out to Excel, get edited, and come back into the model.","Assigns keynotes by family type, reports the legend order, and inventories elements and families.","Hardened an open-source Revit bridge on the <b>Model Context Protocol</b> so an AI agent can read a model safely: loopback only, token sign-in, and the run-any-code tool removed.","Read-only model reports through the bridge: element, type, and family counts, sheet and view lists, keynote tables, and a standards snapshot."],
+  stack:"Revit API &middot; Dynamo &middot; Python &middot; C# &middot; MCP"},
 
  {cat:"auto",dot:"var(--auto)",name:"LSP Library",one:"68 AutoCAD commands and 14 suites, searchable by task; ships in my CurioVerse app.",
   tags:["AutoLISP","AutoCAD"],
@@ -583,7 +593,7 @@ const PROJECTS=[
 
  {cat:"auto",dot:"var(--auto)",name:"Floor Plan Sketchpad on AWS",one:"A browser floor-plan app with private sign-in, cloud autosave and version history.",
   tags:["AWS","Cognito","Lambda","DynamoDB","CloudFront"],
-  det:["Plan and 3D views with a furniture library, in the browser.","Sign-in through <b>Amazon Cognito</b>: invite-only, OAuth code flow with PKCE, finished on the server.","Plans and every saved version kept in <b>DynamoDB</b>.","Served through <b>CloudFront</b>, and the API only answers through it. A daily request cap keeps the cost in check."],
+  det:["Plan and 3D views with a furniture library, in the browser.","Sign-in through <b>Amazon Cognito</b>: invite-only, OAuth code flow with PKCE, finished on the server.","Plans and every saved version kept in <b>DynamoDB</b>.","Served through <b>CloudFront</b>, and the API only answers through it. A daily request cap keeps the cost in check.","Reads vector PDF plans, and exports to CAD (DXF) and 3D (OBJ, STL).","Every push to main runs the tests, deploys, smoke-checks the live functions, and puts the old version back on a failure (<b>AWS CodeBuild</b>).","The site's \"Ask about my work\" chat runs live on <b>Amazon Bedrock</b> under a hard monthly cost cap."],
   stack:"AWS &middot; Cognito &middot; Lambda &middot; DynamoDB &middot; CloudFront", demo:"https://d2s2iyd9xg4xp8.cloudfront.net/aws/floorplan.html"}
 ];
 
