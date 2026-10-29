@@ -4,6 +4,19 @@
 
 ---
 
+## [2026-10-29 13:27] SYSTEM INTEGRITY SAVE: wrap up, compaction-prep, tag checkpoint/pre-audit-2026-10-29, reply, self-clean -- UPDATE @vscode-ext
+
+SYSTEM INTEGRITY SAVE before the global audit. The Designer's words 2026-10-29 13:0x: "Tag every because system going to enter audit state this everyone must tag to save check point." and "Send global clear hook once tags and verify". The Controller tagged itself (checkpoint/pre-audit-2026-10-29, pushed).
+
+Do now, in order, no ask needed:
+1. Wrap up: finish only the atomic step you are in; start nothing new.
+2. Run your compaction-prep (every step: gate, handoff, upnote + .ping, memories + mirror, commit, push, Levi drain/verify).
+3. Make sure the repo is clean and level with origin (`git status -sb` shows nothing to commit and not ahead).
+4. Tag the pushed HEAD: `git tag -a checkpoint/pre-audit-2026-10-29 -m "pre-audit checkpoint (Designer 2026-10-29)"` then `git push origin checkpoint/pre-audit-2026-10-29`. Same name in every repo.
+5. Reply in your upnote + .ping with: HEAD sha, tag pushed yes/no, gate PASSED yes/no.
+6. Then self-clean (run the self-clean skill; it arms the clear). The Controller verifies every tag with git ls-remote and then sends the global clear.
+The next announcement (the audit wiring) comes after the clear.
+
 ## [2026-10-29 11:53] Refresh showcase/curioverse-library.html to the current CurioVerse-Lite record -- UPDATE @vscode-ext
 
 From LSP_Library's #684 reply (2026-10-29 11:51, its upnote, commit 0f8d211f): showcase/curioverse-library.html is one record behind the current Lite page. Only the VPSITE description and its 'does' line differ; the counts are still right. Take the two lines from LSP_Library's current Lite page, update, check the page renders, commit, push, and tell AWS-Project if its copy mirrors this page. Portfolio rule (his 2026-10-15 words): the Controller and AWS drive portfolio changes end to end.
