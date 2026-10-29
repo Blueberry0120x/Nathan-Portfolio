@@ -257,6 +257,9 @@ h2{
   font-family:var(--mono);font-size:12px;font-weight:600;color:var(--dot);text-decoration:none;
   border:1px solid var(--line);border-radius:6px;padding:6px 12px;transition:all .15s;}
 .demolink:hover{border-color:var(--dot);background:var(--card);}
+button.demolink{background:none;cursor:pointer;margin-right:8px;}
+.embedbox iframe{display:block;width:100%;height:min(72vh,620px);margin-top:14px;
+  border:1px solid var(--line);border-radius:8px;background:var(--card);}
 
 /* ============================================================================
    EXPERIENCE
@@ -594,7 +597,8 @@ const PROJECTS=[
  {cat:"auto",dot:"var(--auto)",name:"Floor Plan Sketchpad on AWS",one:"A browser floor-plan app with private sign-in, cloud autosave and version history.",
   tags:["AWS","Cognito","Lambda","DynamoDB","CloudFront"],
   det:["Plan and 3D views with a furniture library, in the browser.","Sign-in through <b>Amazon Cognito</b>: invite-only, OAuth code flow with PKCE, finished on the server.","Plans and every saved version kept in <b>DynamoDB</b>.","Served through <b>CloudFront</b>, and the API only answers through it. A daily request cap keeps the cost in check.","Reads vector PDF plans, and exports to CAD (DXF) and 3D (OBJ, STL).","Every push to main runs the tests, deploys, smoke-checks the live functions, and puts the old version back on a failure (<b>AWS CodeBuild</b>).","The site's \"Ask about my work\" chat runs live on <b>Amazon Bedrock</b> under a hard monthly cost cap."],
-  stack:"AWS &middot; Cognito &middot; Lambda &middot; DynamoDB &middot; CloudFront", demo:"https://d2s2iyd9xg4xp8.cloudfront.net/aws/floorplan.html"}
+  stack:"AWS &middot; Cognito &middot; Lambda &middot; DynamoDB &middot; CloudFront", demo:"https://d2s2iyd9xg4xp8.cloudfront.net/aws/floorplan.html",
+  embed:"https://d2s2iyd9xg4xp8.cloudfront.net/aws/demo.html"}
 ];
 
 const grid=document.getElementById("grid");
@@ -612,13 +616,19 @@ grid.innerHTML=PROJECTS.map((p,i)=>`
      <div class="detail"><div class="detail-inner">
        <ul>${p.det.map(d=>`<li>${d}</li>`).join("")}</ul>
        <div class="stack">${p.stack}</div>
-       ${p.demo?`<a class="demolink" href="${p.demo}" target="_blank" rel="noopener">View live demo &rarr;</a>`:""}
+       ${p.embed?`<button class="demolink tryhere" data-embed="${p.embed}">Try it here &darr;</button>`:""}${p.demo?`<a class="demolink" href="${p.demo}" target="_blank" rel="noopener">View live demo &rarr;</a>`:""}
+       ${p.embed?`<div class="embedbox"></div>`:""}
      </div></div>
    </div>
  </article>`).join("");
 
 function toggle(i){const el=grid.querySelectorAll(".proj")[i];const open=el.getAttribute("data-open")==="true";el.setAttribute("data-open",String(!open));const b=el.querySelector(".expand");b.lastChild.textContent=open?" Read more":" Show less";}
-grid.addEventListener("click",e=>{const h=e.target.closest("[data-i]");if(h)toggle(+h.getAttribute("data-i"));});
+grid.addEventListener("click",e=>{
+  const t=e.target.closest(".tryhere");
+  if(t){const box=t.closest(".detail-inner").querySelector(".embedbox");
+    if(!box.firstChild){const f=document.createElement("iframe");f.src=t.dataset.embed;f.title="Floor Plan Sketchpad live demo";f.loading="lazy";box.appendChild(f);}
+    t.remove();return;}
+  const h=e.target.closest("[data-i]");if(h)toggle(+h.getAttribute("data-i"));});
 
 const filters=document.getElementById("filters");
 filters.addEventListener("click",e=>{const b=e.target.closest(".filt");if(!b)return;
