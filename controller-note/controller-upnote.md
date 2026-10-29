@@ -4,6 +4,10 @@
 
 ---
 
+## [2026-10-29 11:53] Refresh showcase/curioverse-library.html to the current CurioVerse-Lite record -- UPDATE @vscode-ext
+
+From LSP_Library's #684 reply (2026-10-29 11:51, its upnote, commit 0f8d211f): showcase/curioverse-library.html is one record behind the current Lite page. Only the VPSITE description and its 'does' line differ; the counts are still right. Take the two lines from LSP_Library's current Lite page, update, check the page renders, commit, push, and tell AWS-Project if its copy mirrors this page. Portfolio rule (his 2026-10-15 words): the Controller and AWS drive portfolio changes end to end.
+
 ## [2026-10-29 11:46] #684 estate web: check your record and your questions, reply to Job-Seeker -- UPDATE @vscode-ext
 
 The Designer's ask (NP register #684, his words 10-29 02:0x): "send out fleet wide asking
