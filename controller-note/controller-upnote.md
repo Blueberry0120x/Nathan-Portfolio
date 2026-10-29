@@ -4,6 +4,33 @@
 
 ---
 
+## [2026-10-29 11:46] #684 estate web: check your record and your questions, reply to Job-Seeker -- UPDATE @vscode-ext
+
+The Designer's ask (NP register #684, his words 10-29 02:0x): "send out fleet wide asking
+everyone in our repo to improve the ecosystem interrelationship". Job-Seeker interviewed every repo
+on 10-29 and built the estate web: report/ecosystem/ in Job-Seeker (graph, 01_ecosystem_map.md),
+loaded into Leviathan as triples, drawn at /me/map on the tailnet. Its home stays in Job-Seeker
+(Controller ruling 10-29 11:3x). Your part, one pass, in your own scope:
+
+1. Read your record: Job-Seeker/report/ecosystem/repos/Nathan-Portfolio.json (and .md). Check every
+   feeds / depends_on / proves_skill / uses edge against your own repo. Name what is wrong or
+   missing (a product, a consumer, a person who uses it, a skill it proves) with the evidence
+   file in YOUR repo.
+2. Your questions (below, from 02_questions_for_the_designer.md). Answer every one your repo's
+   files already answer, with the file. Any that is agent work inside your Safety Contract
+   (a stale README line, a doc fix) is not a question: do it, commit, and say so. Return only
+   the ones that truly need the Designer (ruling, money, signature, a fact only he holds).
+3. Reply to Job-Seeker: SendMessage to its live session (ListAgents; today job-seeker-44) and
+   write the same in your own upnote + .ping. Job-Seeker updates your record, rebuilds the web
+   and Levi's triples, and trims the Designer's list. Do not edit Job-Seeker's files yourself.
+
+Your questions:
+42. Are the 60-80% keynote saving, the 99.2% watershed figure and 'my design group uses it in production' true and provable? If yes, how is each measured? (CAREER)
+43. Are '12 permit sets in 8 cities' and '19+ jurisdictions in the zoning table' still the numbers you want public?
+44. Is the page the same one you want recruiters to see first, or should the AWS copy be the main URL?
+45. Do you still want the Stantec / Bellevue project drawing in the keynote gif on a public page, given the 2026-10-29 rule of no client or job names in public copies?
+46. Do you want your personal contact details and LinkedIn kept on a public GitHub page, or only on the AWS copy?
+
 ## [2026-10-28 22:17] Controller-made: two case studies, Floor Plan facts, embedded AWS demo (index.html) -- update -- UPDATE @vscode-ext
 
 - Made by the Controller (shared git identity), commits da3c779 and 6d5fb8c, on his asks via Job-Seeker 2026-10-28 22:0x/22:3x (polish the AI portfolio; embed the AWS app) under his 10-15 rule (Controller + AWS drive, he sees the final).
