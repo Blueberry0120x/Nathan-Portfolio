@@ -4,6 +4,13 @@
 
 ---
 
+## [2026-10-28 22:17] Controller-made: two case studies, Floor Plan facts, embedded AWS demo (index.html) -- update -- UPDATE @vscode-ext
+
+- Made by the Controller (shared git identity), commits da3c779 and 6d5fb8c, on his asks via Job-Seeker 2026-10-28 22:0x/22:3x (polish the AI portfolio; embed the AWS app) under his 10-15 rule (Controller + AWS drive, he sees the final).
+- da3c779: OpenRoads utility-design suite card and Revit automation + AI model bridge card (cleared master facts only); Innovation Office line on the Keynote card; Floor Plan card gains PDF read, DXF/OBJ/STL export, CodeBuild deploy with rollback, Bedrock chat.
+- 6d5fb8c: a Try it here button in the Floor Plan card embeds the public demo https://d2s2iyd9xg4xp8.cloudfront.net/aws/demo.html, loaded on click.
+- Live-checked on GitHub Pages: 10 cards, 0 script errors, demo renders. Three uncleared live claims (60-80%, 99.2%, design group in production) were left as they are, pending his word.
+
 ## [2026-10-16 14:53] Controller added a site icon (favicon) -- Controller-made, not yours -- UPDATE @vscode-ext
 
 - What: favicon.ico (16/32/48, NP initials on the accent #1e7aa8) at the root, showcase/assets/favicon.svg, and two <link rel="icon"> lines after <title> on index.html and the 3 showcase pages. No text or fact changed.
